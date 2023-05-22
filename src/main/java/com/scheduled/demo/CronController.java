@@ -19,14 +19,14 @@ public class CronController {
     private static final Logger log = LoggerFactory.getLogger(JobParamTaskService.class);
 
     @GetMapping("/job")
-    public String doAmazonJob(@RequestParam String cron) {
+    public String doJob(@RequestParam String cron) {
         log.info(String.format("------ Trying to update new CRON %s----", cron));
         jobParamTaskService.updateSchedule(cron);
         return "ok";
     }
 
     @GetMapping("/job/cancel")
-    public String cancelAmazonJob() {
+    public String cancelJob() {
         log.info(" ===== Trying to Cancelling Scheduled Task =====");
         jobParamTaskService.cancelFutureSchedulerTask();
         return "ok";

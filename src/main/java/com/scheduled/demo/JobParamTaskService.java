@@ -85,7 +85,7 @@ public class JobParamTaskService implements SchedulingConfigurer {
             log.info("future.cancel() returned {}. isCancelled() : {} isDone : {}",
                     cancel, scheduledFuture.isCancelled(), scheduledFuture.isDone());
 
-            log.info("Reconfiguring sync for {} with new schedule {}", "amazon", updateCron);
+            log.info("Reconfiguring sync for {} with new schedule {}", "job", updateCron);
 
             configureTasks(this.scheduledTaskRegistrar);
         }
